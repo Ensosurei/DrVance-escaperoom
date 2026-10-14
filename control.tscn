@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cm0p051tq4tdq"]
+
+[ext_resource type="Script" uid="uid://pln76ndalns8" path="res://Game.gd" id="1_0fbet"]
+
+[node name="Game" type="Control" unique_id=491770869]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="WallsContainer" type="Control" parent="." unique_id=1577030907]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wall1" type="Control" parent="WallsContainer" unique_id=1315259364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="WallsContainer/Wall1" unique_id=1402814910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.30788758, 0.12082527, 0.14037833, 1)
+
+[node name="Wall2" type="Control" parent="WallsContainer" unique_id=1414392103]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="WallsContainer/Wall2" unique_id=912537249]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2931231, 0.5866241, 0.5739499, 1)
+
+[node name="Wall3" type="Control" parent="WallsContainer" unique_id=511222560]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="WallsContainer/Wall3" unique_id=1299933190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33333334, 0.13333334, 0, 1)
+
+[node name="Wall4" type="Control" parent="WallsContainer" unique_id=539959694]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="WallsContainer/Wall4" unique_id=846273375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5058824, 0.29803923, 0.5647059, 1)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=430204436]
+
+[node name="TimerLabel" type="Label" parent="HUD" unique_id=934020666]
+offset_left = 982.0
+offset_top = 557.0
+offset_right = 1101.0
+offset_bottom = 612.0
+text = "5:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftButton" type="Button" parent="HUD" unique_id=828268623]
+offset_left = 91.0
+offset_top = 306.0
+offset_right = 153.0
+offset_bottom = 364.0
+text = "<"
+
+[node name="RightButton" type="Button" parent="HUD" unique_id=1637036045]
+offset_left = 1040.0
+offset_top = 302.0
+offset_right = 1097.0
+offset_bottom = 359.0
+text = ">"
+
+[node name="GameTimer" type="Timer" parent="." unique_id=740849906]
