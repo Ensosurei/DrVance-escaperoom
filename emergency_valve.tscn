@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dta8rsojcxgvh"]
+
+[ext_resource type="Script" uid="uid://bsu4ghx57ne6s" path="res://EmergencyValve.gd" id="1_1o6rl"]
+[ext_resource type="Texture2D" uid="uid://b5rij5yx1nhe8" path="res://assets/EmergencyValve.png" id="2_1o6rl"]
+[ext_resource type="AudioStream" uid="uid://dlbqi23ymqtts" path="res://sounds/EmergencyValve.mp3" id="3_1rh1e"]
+
+[node name="EmergencyValve" type="Control" unique_id=1214383426]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1o6rl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=260928945]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -495.5
+offset_right = 576.0
+offset_bottom = 495.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="WheelContainer" type="Control" parent="VBoxContainer" unique_id=582219484]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ValveSprite" type="Sprite2D" parent="VBoxContainer/WheelContainer" unique_id=1565062869]
+position = Vector2(100, 100)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_1o6rl")
+
+[node name="ClickArea" type="Button" parent="VBoxContainer/WheelContainer" unique_id=1221471119]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+
+[node name="PressureBar" type="ProgressBar" parent="VBoxContainer" unique_id=800124998]
+layout_mode = 2
+max_value = 360.0
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=861555801]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "?"
+horizontal_alignment = 1
+
+[node name="ValveSound" type="AudioStreamPlayer" parent="." unique_id=1219801051]
+stream = ExtResource("3_1rh1e")
+volume_db = -21.606
+mix_target = 1

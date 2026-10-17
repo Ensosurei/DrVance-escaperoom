@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pln76ndalns8" path="res://Game.gd" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://bvjo7f543wax7" path="res://door.gd" id="2_62e2m"]
+[ext_resource type="PackedScene" uid="uid://dta8rsojcxgvh" path="res://emergency_valve.tscn" id="2_qtu10"]
 
 [node name="Game" type="Control" unique_id=491770869]
 layout_mode = 3
@@ -37,7 +38,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.30788758, 0.12082527, 0.14037833, 1)
 
+[node name="EmergencyValve" parent="WallsContainer/Wall1" unique_id=1214383426 instance=ExtResource("2_qtu10")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+
 [node name="Wall2" type="Control" parent="WallsContainer" unique_id=1414392103]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,6 +69,7 @@ grow_vertical = 2
 color = Color(0.2931231, 0.5866241, 0.5739499, 1)
 
 [node name="Wall3" type="Control" parent="WallsContainer" unique_id=511222560]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,6 +87,7 @@ grow_vertical = 2
 color = Color(0.33333334, 0.13333334, 0, 1)
 
 [node name="Wall4" type="Control" parent="WallsContainer" unique_id=539959694]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
