@@ -38,6 +38,9 @@ func _ready() -> void:
 	# Display initial wall and update timer UI
 	_update_wall_visibility()
 	_update_timer_display()
+	
+	# Connect door unlock signal
+	wall4.door_unlocked.connect(_trigger_victory)
 
 
 func _update_wall_visibility() -> void:
