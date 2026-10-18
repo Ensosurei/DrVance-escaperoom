@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bhhix7u7wns1w"]
+
+[ext_resource type="Script" uid="uid://dcbeyldtr4yyf" path="res://UVFlashlight.gd" id="1_xfup5"]
+[ext_resource type="AudioStream" uid="uid://dqkijgwkatevo" path="res://sounds/FlashlightClick.mp3" id="2_cfrtu"]
+[ext_resource type="AudioStream" uid="uid://cmvpheye400q3" path="res://sounds/FlashlightOn.mp3" id="3_e1b3b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1lnk"]
+bg_color = Color(0.61960787, 0, 1, 0.015686275)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0.4627451, 0.35686275, 1, 0.4392157)
+shadow_size = 50
+
+[node name="UVFlashlight" type="Control" unique_id=327926015]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xfup5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1741515996]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015686275, 0.015686275, 0.015686275, 0.44705883)
+
+[node name="HiddenClue" type="Label" parent="." unique_id=340001592]
+visible = false
+layout_mode = 0
+offset_left = 242.0
+offset_top = 589.0
+offset_right = 282.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 32
+text = "7"
+horizontal_alignment = 1
+
+[node name="FlashlightBeam" type="Panel" parent="." unique_id=853396912]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1lnk")
+
+[node name="FlashlightButton" type="Button" parent="." unique_id=1857390829]
+layout_mode = 0
+offset_left = 907.0
+offset_top = 600.0
+offset_right = 1157.0
+offset_bottom = 631.0
+toggle_mode = true
+text = "Turn on / Turn off UV Flashlight"
+
+[node name="DigitLabel" type="Label" parent="." unique_id=1685861168]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 36.0
+offset_right = 567.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 24
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="." unique_id=745527364]
+stream = ExtResource("2_cfrtu")
+
+[node name="LoopSound" type="AudioStreamPlayer" parent="." unique_id=1167959073]
+stream = ExtResource("3_e1b3b")
+volume_db = -10.62

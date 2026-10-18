@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://254jc0iupp7p"]
+
+[ext_resource type="Script" uid="uid://br4qkk7yt8eak" path="res://FuseSwitch.gd" id="1_2dvpk"]
+[ext_resource type="AudioStream" uid="uid://r2h8wceqimvl" path="res://sounds/BreakerSwitch.mp3" id="2_l35kq"]
+
+[node name="FuseSwitch" type="Control" unique_id=1786252336]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2dvpk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=630334622]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -47.0
+offset_right = 94.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1729434171]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1843818964]
+layout_mode = 2
+
+[node name="SwitchesGrid" type="HBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1424037053]
+layout_mode = 2
+
+[node name="Module1" type="VBoxContainer" parent="VBoxContainer/PanelContainer/SwitchesGrid" unique_id=1562655736]
+layout_mode = 2
+
+[node name="Led1" type="Panel" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module1" unique_id=1368754054]
+layout_mode = 2
+
+[node name="Switch1" type="CheckButton" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module1" unique_id=2046941004]
+layout_mode = 2
+
+[node name="Module2" type="VBoxContainer" parent="VBoxContainer/PanelContainer/SwitchesGrid" unique_id=569992608]
+layout_mode = 2
+
+[node name="Led2" type="Panel" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module2" unique_id=1430102319]
+layout_mode = 2
+
+[node name="Switch2" type="CheckButton" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module2" unique_id=1422957137]
+layout_mode = 2
+
+[node name="Module3" type="VBoxContainer" parent="VBoxContainer/PanelContainer/SwitchesGrid" unique_id=1591788482]
+layout_mode = 2
+
+[node name="Led3" type="Panel" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module3" unique_id=1902517943]
+layout_mode = 2
+
+[node name="Switch3" type="CheckButton" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module3" unique_id=1043306972]
+layout_mode = 2
+
+[node name="Module4" type="VBoxContainer" parent="VBoxContainer/PanelContainer/SwitchesGrid" unique_id=1076847759]
+layout_mode = 2
+
+[node name="Led4" type="Panel" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module4" unique_id=1944941157]
+layout_mode = 2
+
+[node name="Switch4" type="CheckButton" parent="VBoxContainer/PanelContainer/SwitchesGrid/Module4" unique_id=1916961121]
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="VBoxContainer" unique_id=198116070]
+layout_mode = 2
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=1160615303]
+layout_mode = 2
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=570994836]
+stream = ExtResource("2_l35kq")
+volume_db = -11.387
