@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bhhix7u7wns1w"]
 
 [ext_resource type="Script" uid="uid://dcbeyldtr4yyf" path="res://UVFlashlight.gd" id="1_xfup5"]
+[ext_resource type="AudioStream" uid="uid://dqkijgwkatevo" path="res://sounds/FlashlightClick.mp3" id="2_cfrtu"]
+[ext_resource type="AudioStream" uid="uid://cmvpheye400q3" path="res://sounds/FlashlightOn.mp3" id="3_e1b3b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1lnk"]
 bg_color = Color(0.61960787, 0, 1, 0.015686275)
@@ -62,3 +64,10 @@ offset_top = 36.0
 offset_right = 567.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 24
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="." unique_id=745527364]
+stream = ExtResource("2_cfrtu")
+
+[node name="LoopSound" type="AudioStreamPlayer" parent="." unique_id=1167959073]
+stream = ExtResource("3_e1b3b")
+volume_db = -10.62

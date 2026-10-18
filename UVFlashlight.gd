@@ -12,15 +12,16 @@ var flashlight_on: bool = false
 @onready var hidden_clue: Label = $HiddenClue
 @onready var digit_label: Label = $DigitLabel
 
+# Referencias para los dos sonidos
+@onready var switch_sound: AudioStreamPlayer = $SwitchSound
+@onready var loop_sound: AudioStreamPlayer = $LoopSound
+
 
 func _ready() -> void:
-	digit_label.text = "Haz clic en el botón para encender la linterna UV..."
+	digit_label.text = "Click the button to turn on the UV flashlight..."
 	
-	# Ocultar completamente el número al inicio para que no se distinga en la pared
 	hidden_clue.visible = false
 	flashlight_beam.visible = false
-	
-	# Asegurar el pivote al centro del Panel para que siga el mouse correctamente
 	flashlight_beam.pivot_offset = flashlight_beam.size / 2.0
 	
 	flashlight_button.toggled.connect(_on_flashlight_toggled)
@@ -36,28 +37,36 @@ func _on_flashlight_toggled(toggled_on: bool) -> void:
 		return
 	flashlight_on = toggled_on
 	flashlight_beam.visible = toggled_on
+	
+	# 1. Reproducir siempre el sonido de clic/switch al alternar
+	if switch_sound:
+		switch_sound.play()
+	
 	if toggled_on:
-		digit_label.text = "Linterna UV ACTIVA. Mueve el cursor por la pared..."
+		digit_label.text = "UV Flashlight ACTIVE. Move the cursor across the wall..."
+		# 2. Reproducir el zumbido continuo en bucle mientras esté encendida
+		if loop_sound and not loop_sound.playing:
+			loop_sound.play()
 	else:
-		digit_label.text = "Linterna apagada."
+		digit_label.text = "Flashlight turned off."
+		# 3. Detener el zumbido cuando se apaga
+		if loop_sound and loop_sound.playing:
+			loop_sound.stop()
 
 
 func _process(_delta: float) -> void:
 	if not flashlight_on or is_completed:
 		return
 		
-	# El centro del círculo de luz sigue la posición exacta del cursor
 	flashlight_beam.global_position = get_global_mouse_position() - (flashlight_beam.size / 2.0)
 	
-	# Detectar la distancia entre el centro de la luz y la posición del número oculto
 	var beam_center = flashlight_beam.global_position + (flashlight_beam.size / 2.0)
 	var clue_center = hidden_clue.global_position + (hidden_clue.size / 2.0)
 	var distance = beam_center.distance_to(clue_center)
 	
-	# Cuando el haz de luz pase por encima del área del número oculto (menos de 70px)
 	if distance < 70.0:
 		hidden_clue.visible = true
-		hidden_clue.modulate = Color(0.2, 0.9, 1.0, 1.0) # Se ilumina brillante
+		hidden_clue.modulate = Color(0.2, 0.9, 1.0, 1.0)
 		_complete_puzzle()
 
 
@@ -66,5 +75,10 @@ func _complete_puzzle() -> void:
 	flashlight_on = false
 	flashlight_beam.visible = false
 	flashlight_button.disabled = true
-	digit_label.text = "DÍGITO DE CÓDIGO ENCONTRADO: " + assigned_digit
+	digit_label.text = "CODE DIGIT FOUND: " + assigned_digit
+	
+	# Detener el zumbido al resolver el puzzle
+	if loop_sound and loop_sound.playing:
+		loop_sound.stop()
+		
 	puzzle_solved.emit(assigned_digit)
