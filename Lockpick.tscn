@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://hsc6wpedr0ng"]
+
+[ext_resource type="Script" uid="uid://5kkcyvkwqhf3" path="res://Lockpick.gd" id="1_j0mdn"]
+[ext_resource type="AudioStream" uid="uid://bkekuw1v6p8kr" path="res://sounds/Lockpick.mp3" id="2_5dbry"]
+
+[node name="Lockpick" type="Control" unique_id=254035849]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0mdn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=387908611]
+custom_minimum_size = Vector2(450, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -78.0
+offset_right = 20.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InstructionsLabel" type="Label" parent="VBoxContainer" unique_id=413499327]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=512001644]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="LockPanel" type="PanelContainer" parent="VBoxContainer" unique_id=864989247]
+layout_mode = 2
+
+[node name="ControlsVBox" type="VBoxContainer" parent="VBoxContainer/LockPanel" unique_id=1659391756]
+layout_mode = 2
+
+[node name="TensionLabel" type="Label" parent="VBoxContainer/LockPanel/ControlsVBox" unique_id=244101519]
+layout_mode = 2
+
+[node name="TensionSlider" type="HSlider" parent="VBoxContainer/LockPanel/ControlsVBox" unique_id=2013260990]
+layout_mode = 2
+
+[node name="PinLabel" type="Label" parent="VBoxContainer/LockPanel/ControlsVBox" unique_id=373148166]
+layout_mode = 2
+
+[node name="PinSlider" type="HSlider" parent="VBoxContainer/LockPanel/ControlsVBox" unique_id=1555409501]
+layout_mode = 2
+
+[node name="UnlockButton" type="Button" parent="VBoxContainer" unique_id=1186507042]
+layout_mode = 2
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=1298576133]
+layout_mode = 2
+
+[node name="SliderAudio" type="AudioStreamPlayer" parent="." unique_id=1961252437]
+stream = ExtResource("2_5dbry")
+volume_db = -12.817
