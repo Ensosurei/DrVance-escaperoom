@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dam287y1mpxfc"]
+
+[ext_resource type="Script" uid="uid://tot88n14gjks" path="res://crowbar.gd" id="1_y5jjg"]
+[ext_resource type="AudioStream" uid="uid://baugvkoniq2xq" path="res://sounds/Crowbar.mp3" id="2_pskn5"]
+
+[node name="Crowbar" type="Control" unique_id=171038534]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y5jjg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=741029125]
+custom_minimum_size = Vector2(500, 360)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -180.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InstructionsLabel" type="Label" parent="VBoxContainer" unique_id=1442712949]
+layout_mode = 2
+
+[node name="WorkspaceHBox" type="HBoxContainer" parent="VBoxContainer/InstructionsLabel" unique_id=743017912]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1913557307]
+layout_mode = 2
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=1223637291]
+layout_mode = 2
+
+[node name="PryAudio" type="AudioStreamPlayer" parent="." unique_id=1123042071]
+stream = ExtResource("2_pskn5")

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c21lrt6aconyo"]
+
+[ext_resource type="Script" uid="uid://ktcgkmko2acn" path="res://panic_button.gd" id="1_386ok"]
+
+[node name="PanicButton" type="Control" unique_id=872234078]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_386ok")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1496880199]
+custom_minimum_size = Vector2(560, 420)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -40.5
+offset_right = 20.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="InstructionsLabel" type="Label" parent="VBoxContainer" unique_id=1755213566]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PanelHousing" type="Control" parent="VBoxContainer" unique_id=488961440]
+custom_minimum_size = Vector2(240, 220)
+layout_mode = 2
+
+[node name="BackgroundBase" type="Panel" parent="VBoxContainer/PanelHousing" unique_id=1906366150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RedButton" type="Button" parent="VBoxContainer/PanelHousing" unique_id=1584327838]
+custom_minimum_size = Vector2(160, 140)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 180.0
+text = "EMERGENCY
+PRESS"
+
+[node name="SecurityCover" type="Button" parent="VBoxContainer/PanelHousing" unique_id=1331137570]
+custom_minimum_size = Vector2(200, 170)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 25.0
+offset_right = 220.0
+offset_bottom = 195.0
+text = "⚠️ SAFETY COVER ⚠️
+(CLICK TO OPEN)"
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=473344375]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=167123210]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AlarmAudio" type="AudioStreamPlayer" parent="." unique_id=716377004]
