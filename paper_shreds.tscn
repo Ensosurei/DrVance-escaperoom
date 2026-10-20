@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://hinjp1ls3l7"]
+
+[ext_resource type="Script" uid="uid://ehsdht1v8i3x" path="res://paper_shreds.gd" id="1_nkj1x"]
+[ext_resource type="AudioStream" uid="uid://dq2okfg1sww08" path="res://sounds/PaperShreads.mp3" id="2_2njja"]
+
+[node name="PaperShreds" type="Control" unique_id=573120879]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nkj1x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1182041671]
+custom_minimum_size = Vector2(560, 420)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -42.5
+offset_right = 20.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="InstructionsLabel" type="Label" parent="VBoxContainer" unique_id=863709668]
+layout_mode = 2
+text = "INSTRUCTIONS: Reassemble the paper pieces."
+
+[node name="TargetSlotsHBox" type="HBoxContainer" parent="VBoxContainer" unique_id=1384381898]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="ShredsPoolHBox" type="HBoxContainer" parent="VBoxContainer" unique_id=1788071703]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1144191715]
+layout_mode = 2
+text = "STATUS: DOCUMENT SHREDDED"
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=129663735]
+layout_mode = 2
+text = "CODE: ?"
+
+[node name="PaperAudio" type="AudioStreamPlayer" parent="." unique_id=2048855052]
+stream = ExtResource("2_2njja")

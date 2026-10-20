@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://c83h6dgkusj12"]
+
+[ext_resource type="Script" uid="uid://dmxdifh4kl418" path="res://cryptex.gd" id="1_431mr"]
+[ext_resource type="AudioStream" uid="uid://d4as5urlotpc3" path="res://sounds/Cryptex.mp3" id="2_dno68"]
+
+[node name="Cryptex" type="Control" unique_id=1675600565]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_431mr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2049314660]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -109.0
+offset_right = 20.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InstructionsLabel" type="Label" parent="VBoxContainer" unique_id=2092733067]
+layout_mode = 2
+
+[node name="ClueLabel" type="Label" parent="VBoxContainer" unique_id=219642040]
+layout_mode = 2
+
+[node name="DialsContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1109229378]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Dial1" type="VBoxContainer" parent="VBoxContainer/DialsContainer" unique_id=2095382459]
+layout_mode = 2
+
+[node name="UpBtn1" type="Button" parent="VBoxContainer/DialsContainer/Dial1" unique_id=220172019]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "▲"
+
+[node name="Value1" type="Label" parent="VBoxContainer/DialsContainer/Dial1" unique_id=103071387]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="DownBtn1" type="Button" parent="VBoxContainer/DialsContainer/Dial1" unique_id=1202394567]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "▼"
+
+[node name="Dial2" type="VBoxContainer" parent="VBoxContainer/DialsContainer" unique_id=2045107025]
+layout_mode = 2
+
+[node name="UpBtn2" type="Button" parent="VBoxContainer/DialsContainer/Dial2" unique_id=1902638949]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "▲"
+
+[node name="Value2" type="Label" parent="VBoxContainer/DialsContainer/Dial2" unique_id=1066183025]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="DownBtn2" type="Button" parent="VBoxContainer/DialsContainer/Dial2" unique_id=84767964]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "▼"
+
+[node name="Dial3" type="VBoxContainer" parent="VBoxContainer/DialsContainer" unique_id=1935424892]
+layout_mode = 2
+
+[node name="UpBtn3" type="Button" parent="VBoxContainer/DialsContainer/Dial3" unique_id=654032137]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "▲"
+
+[node name="Value3" type="Label" parent="VBoxContainer/DialsContainer/Dial3" unique_id=710806627]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="DownBtn3" type="Button" parent="VBoxContainer/DialsContainer/Dial3" unique_id=615091193]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "▼"
+
+[node name="OpenButton" type="Button" parent="VBoxContainer" unique_id=1448020821]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1851436627]
+layout_mode = 2
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=1168071518]
+layout_mode = 2
+
+[node name="DialAudio" type="AudioStreamPlayer" parent="." unique_id=1441070721]
+stream = ExtResource("2_dno68")

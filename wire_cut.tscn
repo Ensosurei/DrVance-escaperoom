@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dwpaalqrb4isl"]
+
+[ext_resource type="Script" uid="uid://7jay4frn084f" path="res://wire_cut.gd" id="1_0kkmf"]
+[ext_resource type="AudioStream" uid="uid://cyvdehi2v5fak" path="res://sounds/CutWire.mp3" id="2_yojnj"]
+
+[node name="WireCut" type="Control" unique_id=89511282]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kkmf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1251635024]
+custom_minimum_size = Vector2(460, 380)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -62.5
+offset_right = 20.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="InstructionsLabel" type="Label" parent="VBoxContainer" unique_id=894327954]
+layout_mode = 2
+
+[node name="WiresContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1631831667]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 14
+
+[node name="Wire1" type="Button" parent="VBoxContainer/WiresContainer" unique_id=2087799360]
+custom_minimum_size = Vector2(320, 42)
+layout_mode = 2
+
+[node name="Wire2" type="Button" parent="VBoxContainer/WiresContainer" unique_id=158734375]
+custom_minimum_size = Vector2(320, 42)
+layout_mode = 2
+
+[node name="Wire3" type="Button" parent="VBoxContainer/WiresContainer" unique_id=279072311]
+custom_minimum_size = Vector2(320, 42)
+layout_mode = 2
+
+[node name="Wire4" type="Button" parent="VBoxContainer/WiresContainer" unique_id=699547096]
+custom_minimum_size = Vector2(320, 42)
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1954417208]
+layout_mode = 2
+
+[node name="DigitLabel" type="Label" parent="VBoxContainer" unique_id=2048671758]
+layout_mode = 2
+
+[node name="SnipAudio" type="AudioStreamPlayer" parent="." unique_id=1921394655]
+stream = ExtResource("2_yojnj")
